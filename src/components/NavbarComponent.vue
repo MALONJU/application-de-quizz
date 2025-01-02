@@ -1,7 +1,8 @@
 
    <template>
-    <div class="nav-contener">
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="nav-contener ">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
                 <!-- Logo à gauche -->
                 <a class="navbar-brand text-dark " href="#">Logo</a>
@@ -16,13 +17,33 @@
     
                  <!-- Boutons à droite -->
                  <div class="navbar-nav ms-auto">
-                    <button type="button" class="btn btn-outline-success me-2">S'incrire</button>
-                    <button class="btn btn-success" type="button">Se connecter</button>
+                    
+                      <router-link to="/ModalInscription" class="btn btn-outline-success me-2" >S'incrire</router-link>
+                      <router-link to="/ModalConnexion" class="btn btn-success">Se connecter</router-link>
                 </div>
                 
                 </div>
           </nav>
     </div>
     </template>
-    <script></script>
+    <script>
+  
+ 
+    export default {
+      data() {
+        return {
+          showModal: false
+        };
+      },
+      components: {
+        
+      },
+      methods: {
+    openConnexion() {
+      this.$emit('openConnexion');
+        }
+      }
+      
+    };
+    </script>
     <style></style>
